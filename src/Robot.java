@@ -10,8 +10,8 @@ public class Robot extends Tile{
 		this.world = w;
 	}
 
-	public boolean calculateWholeWorld() {
-		if (this.canMoveHereFrom())
+	public void calculateWholeWorld(int value) {
+		if (this.canMoveHereFrom(world.getTile(this.getY() + 1, this.getX())))
 		if (field[y + 1][x] > ownValue || field[y + 1][x] == -1)
 			distance(ownValue + 1, x, y + 1);
 
